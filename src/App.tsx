@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Rnd } from "react-rnd";
 import styled from "styled-components";
-
+import Header from "./components/Header";
 // import TextEditor from "./Components/TextEditor";
 const App = () => {
   const [blocks, setBlocks] = useState<any>([]);
@@ -84,6 +84,7 @@ const App = () => {
 
   return (
     <PageBlock>
+      <Header />
       {/* <div>
         <button id="btn-bold" onClick={onBold}>
           <b>B</b>
@@ -138,10 +139,10 @@ const App = () => {
           <TextBox
             contentEditable="true"
             placeholder="Type something..."
-            onClick={handleClick}
-            id={`textbox${key}`}
+            // onClick={handleClick}
+            // id={`textbox${key}`}
             // id="textbox"
-          />
+          ></TextBox>
         </TextBlock>
       ))}
       {/* <GridContext /> */}
@@ -196,7 +197,7 @@ const AddBlock = styled.div`
 
 const TextBlock = styled(Rnd)`
   width: 200px;
-  height: 40px;
+
   border: 1px dotted #222;
   padding: 5px;
   & > :focus {
